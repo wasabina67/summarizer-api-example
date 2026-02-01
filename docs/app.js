@@ -6,7 +6,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   const inputText = document.getElementById("inputText");
   const summarizeBtn = document.getElementById("summarizeBtn");
   const progressDiv = document.getElementById("progress");
+  const copyBtn = document.getElementById("copyBtn");
   const resultDiv = document.getElementById("result");
+
+  async function copyToClipboard() {
+    const text = resultDiv.textContent;
+    if (!text) return;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      copyBtn.classList.add("copied");
+      setTimeout(() => {
+        copyBtn.classList.remove("copied");
+      }, 2000);
+    } catch (error) {
+      console.error("Failed to copy:", error);
+    }
+  }
 
   async function createSummarizer() {
     const summarizer = await Summarizer.create({
@@ -94,6 +110,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (isAvailable) {
     summarizeBtn.disabled = false;
     summarizeBtn.addEventListener("click", summarize);
+    if (copyBtn) copyBtn.addEventListener("click", copyToClipboard);
     inputText.focus();
   }
 });
