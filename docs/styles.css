@@ -172,6 +172,41 @@ button:disabled {
   min-height: 24px;
 }
 
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result-header h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.copy-btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #6b7280;
+  border-radius: 6px;
+  transition: color 0.2s, background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.copy-btn:hover {
+  background: #f3f4f6;
+  color: #4285f4;
+}
+
+.copy-btn.copied {
+  color: #10b981;
+}
+
 .result {
   background: white;
   border: 1px solid #e0e0e0;
@@ -180,6 +215,7 @@ button:disabled {
   min-height: 100px;
   white-space: pre-wrap;
   word-wrap: break-word;
+  margin-top: 15px;
 }
 
 .result:empty {
