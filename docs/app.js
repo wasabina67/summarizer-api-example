@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       type: typeSelect.value,
       format: formatSelect.value,
       length: lengthSelect.value,
-      sharedContext: "Summarize in Japanese",
+      outputLanguage: "ja",
+      sharedContext: "",
       monitor(m) {
         m.addEventListener("downloadprogress", (e) => {
           const percent = Math.round((e.loaded / e.total) * 100);
