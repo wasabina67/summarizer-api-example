@@ -199,12 +199,12 @@ button:disabled {
 }
 
 .copy-btn:hover {
-  background: #f3f4f6;
-  color: #3367d6;
+  background: transparent !important;
+  color: #6b7280 !important;
 }
 
 .copy-btn.copied {
-  color: #10b981;
+  color: #10b981 !important;
 }
 
 .result {
