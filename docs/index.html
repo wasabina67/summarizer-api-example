@@ -13,8 +13,54 @@
         <h1>Summarizer API example</h1>
         <div id="status" class="status">Checking...</div>
       </header>
-      <div>
-      </div>
+      <main>
+        <section class="settings">
+          <h2>Settings</h2>
+          <div class="settings-grid">
+            <div class="setting-group">
+              <label for="type">Type</label>
+              <select id="type">
+                <option value="key-points" selected>Key Points</option>
+                <option value="tl;dr">TL;DR</option>
+                <option value="teaser">Teaser</option>
+                <option value="headline">Headline</option>
+              </select>
+            </div>
+            <div class="setting-group">
+              <label for="format">Format</label>
+              <select id="format">
+                <option value="markdown" selected>Markdown</option>
+                <option value="plain-text">Plain Text</option>
+              </select>
+            </div>
+            <div class="setting-group">
+              <label for="length">Length</label>
+              <select id="length">
+                <option value="short">Short</option>
+                <option value="medium" selected>Medium</option>
+                <option value="long">Long</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="input-section">
+          <label for="inputText"><h2>Input Text</h2></label>
+          <textarea
+            id="inputText"
+            placeholder="Enter the text you want to summarize here..."></textarea>
+        </section>
+
+        <section class="action-section">
+          <button id="summarizeBtn" disabled>Summarize</button>
+          <div id="progress" class="progress"></div>
+        </section>
+
+        <section class="result-section">
+          <h2>Summary Result</h2>
+          <div id="result" class="result"></div>
+        </section>
+      </main>
     </div>
     <script src="app.js"></script>
   </body>
