@@ -70,7 +70,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       return false;
     }
 
-    const availability = await Summarizer.availability();
+    const availability = await Summarizer.availability({
+      outputLanguage: "ja",
+    });
 
     if (availability === "available") {
       statusDiv.textContent = "API Ready";
